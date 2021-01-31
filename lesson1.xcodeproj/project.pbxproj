@@ -8,22 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		2352C1E825BF005E006973FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2352C1E725BF005E006973FB /* AppDelegate.swift */; };
-		2352C1EA25BF005E006973FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2352C1E925BF005E006973FB /* SceneDelegate.swift */; };
-		2352C1EC25BF005E006973FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2352C1EB25BF005E006973FB /* ViewController.swift */; };
 		2352C1EF25BF005E006973FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2352C1ED25BF005E006973FB /* Main.storyboard */; };
 		2352C1F125BF0060006973FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2352C1F025BF0060006973FB /* Assets.xcassets */; };
 		2352C1F425BF0060006973FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2352C1F225BF0060006973FB /* LaunchScreen.storyboard */; };
+		2352C1FF25BF789E006973FB /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2352C1FE25BF789E006973FB /* LoginFormController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2352C1E425BF005E006973FB /* lesson1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lesson1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2352C1E725BF005E006973FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2352C1E925BF005E006973FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2352C1EB25BF005E006973FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2352C1EE25BF005E006973FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2352C1F025BF0060006973FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2352C1F325BF0060006973FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2352C1F525BF0060006973FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2352C1FE25BF789E006973FB /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +55,8 @@
 			isa = PBXGroup;
 			children = (
 				2352C1E725BF005E006973FB /* AppDelegate.swift */,
-				2352C1E925BF005E006973FB /* SceneDelegate.swift */,
-				2352C1EB25BF005E006973FB /* ViewController.swift */,
 				2352C1ED25BF005E006973FB /* Main.storyboard */,
+				2352C1FE25BF789E006973FB /* LoginFormController.swift */,
 				2352C1F025BF0060006973FB /* Assets.xcassets */,
 				2352C1F225BF0060006973FB /* LaunchScreen.storyboard */,
 				2352C1F525BF0060006973FB /* Info.plist */,
@@ -137,9 +134,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2352C1EC25BF005E006973FB /* ViewController.swift in Sources */,
+				2352C1FF25BF789E006973FB /* LoginFormController.swift in Sources */,
 				2352C1E825BF005E006973FB /* AppDelegate.swift in Sources */,
-				2352C1EA25BF005E006973FB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +285,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XK4SFX342S;
 				INFOPLIST_FILE = lesson1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,6 +305,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XK4SFX342S;
 				INFOPLIST_FILE = lesson1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
