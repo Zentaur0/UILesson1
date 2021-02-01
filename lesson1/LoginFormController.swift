@@ -28,6 +28,7 @@ class LoginFormController: UIViewController {
             print("неуспешная авторизация")
         }
     }
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         let checkResult = checkUserData()
         
@@ -101,4 +102,6 @@ class LoginFormController: UIViewController {
         // Присваиваем его UIScrollVIew
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
         }
+    
+        
 }

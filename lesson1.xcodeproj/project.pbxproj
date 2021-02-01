@@ -12,6 +12,12 @@
 		2352C1F125BF0060006973FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2352C1F025BF0060006973FB /* Assets.xcassets */; };
 		2352C1F425BF0060006973FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2352C1F225BF0060006973FB /* LaunchScreen.storyboard */; };
 		2352C1FF25BF789E006973FB /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2352C1FE25BF789E006973FB /* LoginFormController.swift */; };
+		23C2DDCC25C8745200DC9E82 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2DDCA25C8745200DC9E82 /* FriendCell.swift */; };
+		23C2DDD525C874CB00DC9E82 /* AllFriendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2DDD425C874CB00DC9E82 /* AllFriendsList.swift */; };
+		23C2DDDA25C8800400DC9E82 /* MyGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2DDD925C8800400DC9E82 /* MyGroups.swift */; };
+		23C2DDDE25C8801600DC9E82 /* RecomendedGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2DDDD25C8801600DC9E82 /* RecomendedGroups.swift */; };
+		23C2DDE325C8814F00DC9E82 /* MyGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2DDE225C8814F00DC9E82 /* MyGroupCell.swift */; };
+		23C2DDE725C8816100DC9E82 /* RecomendedGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2DDE625C8816100DC9E82 /* RecomendedGroupCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,12 @@
 		2352C1F325BF0060006973FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2352C1F525BF0060006973FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2352C1FE25BF789E006973FB /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
+		23C2DDCA25C8745200DC9E82 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		23C2DDD425C874CB00DC9E82 /* AllFriendsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFriendsList.swift; sourceTree = "<group>"; };
+		23C2DDD925C8800400DC9E82 /* MyGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroups.swift; sourceTree = "<group>"; };
+		23C2DDDD25C8801600DC9E82 /* RecomendedGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendedGroups.swift; sourceTree = "<group>"; };
+		23C2DDE225C8814F00DC9E82 /* MyGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupCell.swift; sourceTree = "<group>"; };
+		23C2DDE625C8816100DC9E82 /* RecomendedGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendedGroupCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,9 @@
 		2352C1E625BF005E006973FB /* lesson1 */ = {
 			isa = PBXGroup;
 			children = (
+				23C2DDE025C880A500DC9E82 /* Model */,
+				23C2DDD825C87FDF00DC9E82 /* GroupsCells */,
+				23C2DDC925C8742600DC9E82 /* FriendsCells */,
 				2352C1E725BF005E006973FB /* AppDelegate.swift */,
 				2352C1ED25BF005E006973FB /* Main.storyboard */,
 				2352C1FE25BF789E006973FB /* LoginFormController.swift */,
@@ -62,6 +77,33 @@
 				2352C1F525BF0060006973FB /* Info.plist */,
 			);
 			path = lesson1;
+			sourceTree = "<group>";
+		};
+		23C2DDC925C8742600DC9E82 /* FriendsCells */ = {
+			isa = PBXGroup;
+			children = (
+				23C2DDCA25C8745200DC9E82 /* FriendCell.swift */,
+				23C2DDD425C874CB00DC9E82 /* AllFriendsList.swift */,
+			);
+			path = FriendsCells;
+			sourceTree = "<group>";
+		};
+		23C2DDD825C87FDF00DC9E82 /* GroupsCells */ = {
+			isa = PBXGroup;
+			children = (
+				23C2DDD925C8800400DC9E82 /* MyGroups.swift */,
+				23C2DDDD25C8801600DC9E82 /* RecomendedGroups.swift */,
+				23C2DDE225C8814F00DC9E82 /* MyGroupCell.swift */,
+				23C2DDE625C8816100DC9E82 /* RecomendedGroupCell.swift */,
+			);
+			path = GroupsCells;
+			sourceTree = "<group>";
+		};
+		23C2DDE025C880A500DC9E82 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +177,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2352C1FF25BF789E006973FB /* LoginFormController.swift in Sources */,
+				23C2DDDE25C8801600DC9E82 /* RecomendedGroups.swift in Sources */,
+				23C2DDCC25C8745200DC9E82 /* FriendCell.swift in Sources */,
+				23C2DDDA25C8800400DC9E82 /* MyGroups.swift in Sources */,
 				2352C1E825BF005E006973FB /* AppDelegate.swift in Sources */,
+				23C2DDE325C8814F00DC9E82 /* MyGroupCell.swift in Sources */,
+				23C2DDD525C874CB00DC9E82 /* AllFriendsList.swift in Sources */,
+				23C2DDE725C8816100DC9E82 /* RecomendedGroupCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
