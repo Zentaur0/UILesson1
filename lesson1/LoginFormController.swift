@@ -28,6 +28,31 @@ class LoginFormController: UIViewController {
             print("неуспешная авторизация")
         }
     }
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        let checkResult = checkUserData()
+        
+        if !checkResult {
+            showLoginError()
+        }
+        return checkResult
+    }
+    
+    func checkUserData() -> Bool {
+        guard let login = loginInput.text, let password = passwordInput.text else { return false }
+        
+        if login == "admin" && password == "123456" {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func showLoginError() {
+        let alert = UIAlertController(title: "Ошибка", message: "Введены неверные данные пользователя, проверьте правильность login и password и повторите попытку", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
     
     // Когда клавиатура появляется
     @objc func keyboardWasShown(notification: Notification) {
