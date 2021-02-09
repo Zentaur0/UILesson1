@@ -7,14 +7,8 @@
 
 import Foundation
 
-class Group {
+struct Group {
     let nickname: String
     var bio: String
     let areaOfInterests: String
-    
-    init(nickname: String, bio: String, areaOfInterests: String) {
-        self.nickname = nickname
-        self.bio = bio
-        self.areaOfInterests = areaOfInterests
-    }
 }

@@ -8,14 +8,8 @@
 import UIKit
 
 class GroupTableViewCell: UITableViewCell {
-
-    var groupsList: Set = ["Group 1", "Group 2", "Group 3", "Group 4", "Group 5"]
     
-    @IBOutlet weak var groupName: UILabel! {
-        didSet {
-            self.groupName.text = groupsList.randomElement()
-        }
-    }
+    @IBOutlet weak var groupName: UILabel!
     
     @IBOutlet weak var groupPic: UIImageView!
     
@@ -29,7 +23,4 @@ class GroupTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    
-    
 }
