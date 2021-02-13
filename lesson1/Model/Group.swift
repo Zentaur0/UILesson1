@@ -8,6 +8,7 @@
 import Foundation
 
 struct Group {
+    let id: Int
     let nickname: String
     var bio: String
     let areaOfInterests: String

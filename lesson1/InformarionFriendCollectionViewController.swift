@@ -7,22 +7,18 @@
 
 import UIKit
 
-
-
 class InformarionFriendCollectionViewController: UICollectionViewController {
 
+    @IBOutlet var friendPage: UICollectionView!
+    
+    var data: User!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        
-
-        // Do any additional setup after loading the view.
+        friendPage.register(UINib(nibName: "OneFriendCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "OneFriendCell")
+//        self.title = data.name
     }
-
+    
     /*
     // MARK: - Navigation
 
@@ -46,16 +42,15 @@ class InformarionFriendCollectionViewController: UICollectionViewController {
         return 1
     }
 
+    //MARK: not working
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "friendPagePic", for: indexPath) as! InformationFriendCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OneFriendCell", for: indexPath) as! OneFriendCollectionViewCell
         
-        cell.friendPic.image = UIImage(named: "globe")
+        cell.friendName.text = FriendsTableViewController().friendsList[indexPath.row].name
         
-        // Configure the cell
-    
         return cell
     }
-
+    
     // MARK: UICollectionViewDelegate
 
     /*

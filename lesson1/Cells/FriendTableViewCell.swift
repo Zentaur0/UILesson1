@@ -9,9 +9,9 @@ import UIKit
 
 class FriendTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var friendName: UILabel!
+    @IBOutlet weak var friendPic: AvatarView!
     
-    @IBOutlet weak var friendPic: UIImageView!
+    @IBOutlet weak var friendName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
