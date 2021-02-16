@@ -14,7 +14,17 @@ class GroupTableViewController: UITableViewController {
     var groups = [String]()
     
     @IBAction func addGroup(segue: UIStoryboardSegue) {
-       
+        if segue.identifier == "addGroup" {
+            guard let allGroupsController = segue.source as? AllGroupsTableViewController else { return }
+            if let indexPath = allGroupsController.tableView.indexPathForSelectedRow {
+                let group = allGroupsController.groups[indexPath.row]
+            
+                if !groups.contains(group) {
+                    groups.append(group)
+                    tableView.reloadData()
+                }
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -50,6 +60,7 @@ class GroupTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
     }
 
     /*

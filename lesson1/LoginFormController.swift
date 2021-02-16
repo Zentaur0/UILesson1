@@ -28,6 +28,11 @@ class LoginFormController: UIViewController {
             print("неуспешная авторизация")
         }
     }
+    
+    @IBAction func logOut(segue: UIStoryboardSegue) {
+        
+    }
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         let checkResult = checkUserData()
         
