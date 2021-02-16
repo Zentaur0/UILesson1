@@ -9,11 +9,9 @@ import UIKit
 
 class FriendsTableViewController: UITableViewController {
     
-    @IBOutlet var friendsPage: UITableView!
+    var selectedIndexPaths = Set<IndexPath>()
     
-//    let friendsList: Array = ["Anastasia Gulert", "Victor Miheev", "Tom Vekerfield", "Alisha Tompson", "Federico Bruno"]
-    
-    let friendsList = [
+    private var friendsList = [
         User(id: 1, name: "Anastasia Gulert", age: 23, avatarName: "GulertAnastasia_Avatar"),
         User(id: 2, name: "Victor Miheev", age: 40, avatarName: "VictorMiheev_Avatar"),
         User(id: 3, name: "Tom Vekerfield", age: 35, avatarName: "TomVekerfield_Avatar"),
@@ -23,7 +21,10 @@ class FriendsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        friendsPage.register(UINib(nibName: "FriendTableViewCell", bundle: nil), forCellReuseIdentifier: "friendCell")
+        
+        self.tableView.estimatedRowHeight = 40
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.register(UINib(nibName: "FriendTableViewCell", bundle: nil), forCellReuseIdentifier: "friendCell")
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -40,34 +41,43 @@ class FriendsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! FriendTableViewCell
         
         cell.friendName.text = self.friendsList[indexPath.row].name
-//        cell.friendPic.imageView.image = UIImage(named: friendsList[indexPath.row].avatarName)
+        cell.friendPic.imageView.image = UIImage(named: self.friendsList[indexPath.row].avatarName)
+        
         return cell
     }
     
+    var showingIndex: IndexPath?
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "goToFriendPage", sender: nil)
         
-        // MARK: Data? not working
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewController(identifier: "FriendPage") as! InformarionFriendCollectionViewController
-//        vc.data = self.friendsList[indexPath.row]
-//        self.navigationController?.pushViewController(vc, animated: true)
+        self.showingIndex = indexPath
+        performSegue(withIdentifier: "goToFriendPage", sender: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        guard let indexPath = self.showingIndex, segue.identifier == "goToFriendPage" else { return }
+        let vc = segue.destination as! InformarionFriendCollectionViewController
+        vc.data = self.friendsList[indexPath.row]
+        
+    }
+    
+    var shoingIndex: IndexPath?
     //MARK: maybe
-//    @IBAction func showFriendPage(segue: UIStoryboardSegue) {
-//        if segue.identifier == "goToFriendPage" {
-//            guard let allFriendsPage = segue.source as? FriendsTableViewController else { return }
-//            if let indexPath = allFriendsPage.tableView.indexPathForSelectedRow {
-//                let friend = allFriendsPage.friendsList[indexPath.row]
-//                let cell = FriendTableViewCell()
-//                if allFriendsPage.friendsList.contains(friend) {
-//                    cell.friendName.text = allFriendsPage.friendsList[indexPath.row]
-//                }
-//            }
-//        }
-//    }
+    @IBAction func showFriendPage(segue: UIStoryboardSegue) {
+        if segue.identifier == "goToFriendPage" {
+            guard let allFriendsPage = segue.source as? FriendsTableViewController else { return }
+            if let indexPath = allFriendsPage.tableView.indexPathForSelectedRow {
+                let friend = allFriendsPage.friendsList[indexPath.row].name
+                let cell = OneFriendCollectionViewCell()
+                if allFriendsPage.tableView.contains(friend as! UIFocusEnvironment) { 
+                    cell.friendName.text = allFriendsPage.friendsList[indexPath.row].name
+                }
+            }
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

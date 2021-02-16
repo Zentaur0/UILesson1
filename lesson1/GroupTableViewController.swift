@@ -8,8 +8,6 @@
 import UIKit
 
 class GroupTableViewController: UITableViewController {
-
-    @IBOutlet var groupsPage: UITableView!
     
     var groups = [String]()
     
@@ -30,7 +28,7 @@ class GroupTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        groupsPage.register(UINib(nibName: "GroupTableViewCell", bundle: nil), forCellReuseIdentifier: "groupCell")
+        self.tableView.register(UINib(nibName: "GroupTableViewCell", bundle: nil), forCellReuseIdentifier: "groupCell")
         // Uncomment the following line to preserve selection between presentations
 //         self.clearsSelectionOnViewWillAppear = false
 

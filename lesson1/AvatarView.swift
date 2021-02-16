@@ -20,8 +20,6 @@ class AvatarView: UIView {
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
             self.layer.cornerRadius = cornerRadius
-//            self.imageView.layer.cornerRadius = cornerRadius
-//            self.imageView.layer.masksToBounds = true
         }
     }
 

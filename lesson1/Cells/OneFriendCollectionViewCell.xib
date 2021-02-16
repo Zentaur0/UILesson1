@@ -4,39 +4,77 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OneFriendCell" id="gTV-IL-0wX" customClass="OneFriendCollectionViewCell" customModule="lesson1" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
-            <autoresizingMask key="autoresizingMask"/>
-            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
-                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OneFriendCell" id="f5v-qB-XmN" customClass="OneFriendCollectionViewCell" customModule="lesson1" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DVz-Tj-Wh9">
+                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDi-eu-I3N">
-                        <rect key="frame" x="29" y="65" width="93" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5bd-a5-e8m" customClass="AvatarView" customModule="lesson1" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                        <subviews>
+                            <view contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kvN-SX-SI3" customClass="LikeView" customModule="lesson1" customModuleProvider="target">
+                                <rect key="frame" x="160" y="160" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES"/>
+                                </accessibility>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                        <color key="value" systemColor="labelColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ews-x0-X67">
+                                <rect key="frame" x="20" y="20" width="160" height="160"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ews-x0-X67" secondAttribute="trailing" constant="20" symbolic="YES" id="32Z-d9-pqm"/>
+                            <constraint firstAttribute="bottom" secondItem="Ews-x0-X67" secondAttribute="bottom" constant="20" symbolic="YES" id="cm3-cf-Sbu"/>
+                            <constraint firstItem="Ews-x0-X67" firstAttribute="top" secondItem="5bd-a5-e8m" secondAttribute="top" constant="20" symbolic="YES" id="nd2-d5-LfF"/>
+                            <constraint firstItem="Ews-x0-X67" firstAttribute="leading" secondItem="5bd-a5-e8m" secondAttribute="leading" constant="20" symbolic="YES" id="uTj-2b-dJI"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="imageView" destination="Ews-x0-X67" id="DbY-Yw-THO"/>
+                        </connections>
+                    </view>
                 </subviews>
-            </view>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" red="1" green="0.76494958896833887" blue="0.35542730226624142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-            <constraints>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="SDi-eu-I3N" secondAttribute="trailing" constant="178" id="22m-uy-WfW"/>
-                <constraint firstItem="SDi-eu-I3N" firstAttribute="leading" relation="lessThanOrEqual" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="29" id="UGt-Sh-q9b"/>
-                <constraint firstItem="SDi-eu-I3N" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="21" id="aHt-jR-yw4"/>
-            </constraints>
-            <size key="customSize" width="327" height="306"/>
-            <connections>
-                <outlet property="friendName" destination="SDi-eu-I3N" id="bRS-2j-SL6"/>
-            </connections>
-            <point key="canvasLocation" x="0.7246376811594204" y="61.272321428571423"/>
+                <constraints>
+                    <constraint firstItem="5bd-a5-e8m" firstAttribute="top" secondItem="DVz-Tj-Wh9" secondAttribute="top" id="DjI-Pt-eEf"/>
+                    <constraint firstAttribute="bottom" secondItem="5bd-a5-e8m" secondAttribute="bottom" id="L6j-BI-ytA"/>
+                    <constraint firstAttribute="trailing" secondItem="5bd-a5-e8m" secondAttribute="trailing" id="RoT-Ta-CMd"/>
+                    <constraint firstItem="5bd-a5-e8m" firstAttribute="leading" secondItem="DVz-Tj-Wh9" secondAttribute="leading" id="bg9-nm-Z1y"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="167" height="151"/>
+            <point key="canvasLocation" x="-100.00000000000001" y="46.205357142857139"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

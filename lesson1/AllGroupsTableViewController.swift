@@ -9,14 +9,12 @@ import UIKit
 
 class AllGroupsTableViewController: UITableViewController {
     
-    @IBOutlet var allGroupPage: UITableView!
-    
     let groups = ["Group 1", "Group 2", "Group 3", "Group 4", "Group 5"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        allGroupPage.register(UINib(nibName: "AllGroupsTableViewCell", bundle: nil), forCellReuseIdentifier: "allGroupCell")
+        self.tableView.register(UINib(nibName: "AllGroupsTableViewCell", bundle: nil), forCellReuseIdentifier: "allGroupCell")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
