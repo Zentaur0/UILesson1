@@ -11,6 +11,8 @@ class FriendsTableViewController: UITableViewController {
 
     @IBOutlet var friendsPage: UITableView!
     
+    let friendsList: Array = ["Anastasia Gulert", "Victor Miheev", "Tom Vekerfield", "Alisha Tompson", "Federico Bruno"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,16 +26,25 @@ class FriendsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        return friendsList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! FriendTableViewCell
+        
+        let friend = friendsList[indexPath.row]
+        cell.friendName.text = friend
+        cell.friendPic.image = UIImage(systemName: "person.circle.fill")
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "FriendCell") as! FriendsTableViewController
+//        vc.friendsPage = self.friendsList[indexPath.row]
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     /*

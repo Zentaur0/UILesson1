@@ -1,17 +1,17 @@
 //
-//  FriendTableViewCell.swift
+//  AllGroupsTableViewCell.swift
 //  lesson1
 //
-//  Created by Антон Сивцов on 02.02.2021.
+//  Created by Антон Сивцов on 07.02.2021.
 //
 
 import UIKit
 
-class FriendTableViewCell: UITableViewCell {
+class AllGroupsTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var allGroupName: UILabel!
     
-    @IBOutlet weak var friendName: UILabel!
-    
-    @IBOutlet weak var friendPic: UIImageView!
+    @IBOutlet weak var allGroupPic: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,5 +23,4 @@ class FriendTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }
