@@ -13,7 +13,11 @@ class FriendTableViewCell: UITableViewCell {
     
     @IBOutlet weak var friendName: UILabel!
     
-    var like: LikeView!
+    @IBOutlet weak var friendAge: UILabel!
+    
+    @IBOutlet weak var friendLastName: UILabel!
+    
+    var like: HeartButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

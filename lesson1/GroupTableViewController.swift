@@ -9,7 +9,7 @@ import UIKit
 
 class GroupTableViewController: UITableViewController {
     
-    var groups = [String]()
+    var groups = [Group]()
     
     @IBAction func addGroup(segue: UIStoryboardSegue) {
         if segue.identifier == "addGroup" {
@@ -50,9 +50,9 @@ class GroupTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! GroupTableViewCell
         
-        let group = groups[indexPath.row]
+        let group = groups[indexPath.row].nickname
         cell.groupName.text = group
-        cell.groupPic.image = UIImage(systemName: "globe")
+        cell.groupPic.imageView.image = UIImage(systemName: self.groups[indexPath.row].pic)
         return cell
     }
     

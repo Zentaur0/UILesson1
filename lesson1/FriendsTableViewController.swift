@@ -9,22 +9,22 @@ import UIKit
 
 class FriendsTableViewController: UITableViewController {
     
+    var data: User!
     var selectedIndexPaths = Set<IndexPath>()
     
     private var friendsList = [
-        User(id: 1, name: "Anastasia Gulert", age: 23, avatarName: "GulertAnastasia_Avatar"),
-        User(id: 2, name: "Victor Miheev", age: 40, avatarName: "VictorMiheev_Avatar"),
-        User(id: 3, name: "Tom Vekerfield", age: 35, avatarName: "TomVekerfield_Avatar"),
-        User(id: 4, name: "Alisha Tompson", age: 33, avatarName: "TompsonAlisha_Avatar"),
-        User(id: 5, name: "Federico Bruno", age: 25, avatarName: "FedericoBruno_Avatar")
+        User(id: 1, name: "Anastasia", lastName: "Gulert", age: 23, avatarName: "GulertAnastasia_Avatar"),
+        User(id: 2, name: "Victor", lastName: "Miheev", age: 40, avatarName: "VictorMiheev_Avatar"),
+        User(id: 3, name: "Tom", lastName: "Vekerfield", age: 35, avatarName: "TomVekerfield_Avatar"),
+        User(id: 4, name: "Alisha", lastName: "Tompson", age: 33, avatarName: "TompsonAlisha_Avatar"),
+        User(id: 5, name: "Federico", lastName: "Bruno", age: 25, avatarName: "FedericoBruno_Avatar")
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.estimatedRowHeight = 40
-        self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.register(UINib(nibName: "FriendTableViewCell", bundle: nil), forCellReuseIdentifier: "friendCell")
+        self.tableView.register(UINib(nibName: "HeaderTableViewCell", bundle: nil), forHeaderFooterViewReuseIdentifier: "headerTableViewCell")
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -41,7 +41,9 @@ class FriendsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! FriendTableViewCell
         
         cell.friendName.text = self.friendsList[indexPath.row].name
+        cell.friendLastName.text = self.friendsList[indexPath.row].lastName
         cell.friendPic.imageView.image = UIImage(named: self.friendsList[indexPath.row].avatarName)
+        cell.friendAge.text = "\(self.friendsList[indexPath.row].age) years"
         
         return cell
     }
@@ -72,13 +74,21 @@ class FriendsTableViewController: UITableViewController {
             if let indexPath = allFriendsPage.tableView.indexPathForSelectedRow {
                 let friend = allFriendsPage.friendsList[indexPath.row].name
                 let cell = OneFriendCollectionViewCell()
-                if allFriendsPage.tableView.contains(friend as! UIFocusEnvironment) { 
-                    cell.friendName.text = allFriendsPage.friendsList[indexPath.row].name
+                if allFriendsPage.tableView.contains(friend as! UIFocusEnvironment) {
+                    cell.friendPic.image = UIImage(named: allFriendsPage.data.avatarName)
                 }
             }
         }
     }
 
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "headerTableViewCell") as! HeaderTableViewCell
+            view.symbol.text = "a"
+            return view
+        }
+        return nil
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

@@ -21,9 +21,24 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5bd-a5-e8m" customClass="AvatarView" customModule="lesson1" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                         <subviews>
-                            <view contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kvN-SX-SI3" customClass="LikeView" customModule="lesson1" customModuleProvider="target">
-                                <rect key="frame" x="160" y="160" width="40" height="40"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Ews-x0-X67">
+                                <rect key="frame" x="31" y="20" width="138" height="132"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QR8-C8-E0Z">
+                                <rect key="frame" x="10" y="168" width="41.5" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGu-Uf-Z3F">
+                                <rect key="frame" x="56.5" y="168" width="42" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="kvN-SX-SI3" customClass="HeartButton" customModule="lesson1" customModuleProvider="target">
+                                <rect key="frame" x="157" y="160" width="35" height="32"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -31,7 +46,7 @@
                                 </accessibility>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
                                         <color key="value" systemColor="labelColor"/>
@@ -39,17 +54,28 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ews-x0-X67">
-                                <rect key="frame" x="20" y="20" width="160" height="160"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Ews-x0-X67" secondAttribute="trailing" constant="20" symbolic="YES" id="32Z-d9-pqm"/>
-                            <constraint firstAttribute="bottom" secondItem="Ews-x0-X67" secondAttribute="bottom" constant="20" symbolic="YES" id="cm3-cf-Sbu"/>
-                            <constraint firstItem="Ews-x0-X67" firstAttribute="top" secondItem="5bd-a5-e8m" secondAttribute="top" constant="20" symbolic="YES" id="nd2-d5-LfF"/>
-                            <constraint firstItem="Ews-x0-X67" firstAttribute="leading" secondItem="5bd-a5-e8m" secondAttribute="leading" constant="20" symbolic="YES" id="uTj-2b-dJI"/>
+                            <constraint firstAttribute="trailing" secondItem="Ews-x0-X67" secondAttribute="trailing" constant="31" id="32Z-d9-pqm"/>
+                            <constraint firstItem="QR8-C8-E0Z" firstAttribute="leading" secondItem="5bd-a5-e8m" secondAttribute="leading" constant="10" id="4gm-oC-oIw"/>
+                            <constraint firstItem="kvN-SX-SI3" firstAttribute="leading" secondItem="5bd-a5-e8m" secondAttribute="leading" constant="157" id="6NM-UV-enX"/>
+                            <constraint firstAttribute="trailing" secondItem="kvN-SX-SI3" secondAttribute="trailing" constant="8" id="8Ml-Av-mgD"/>
+                            <constraint firstItem="QR8-C8-E0Z" firstAttribute="top" secondItem="Ews-x0-X67" secondAttribute="bottom" constant="16" id="DUt-Yh-uWr"/>
+                            <constraint firstAttribute="bottom" secondItem="LGu-Uf-Z3F" secondAttribute="bottom" constant="12" id="dqT-V1-LDE"/>
+                            <constraint firstItem="LGu-Uf-Z3F" firstAttribute="leading" secondItem="QR8-C8-E0Z" secondAttribute="trailing" constant="5" id="hAK-S7-2VB"/>
+                            <constraint firstItem="LGu-Uf-Z3F" firstAttribute="top" secondItem="Ews-x0-X67" secondAttribute="bottom" constant="16" id="iCQ-f8-OuF"/>
+                            <constraint firstAttribute="bottom" secondItem="kvN-SX-SI3" secondAttribute="bottom" constant="8" id="jBv-K9-vnW"/>
+                            <constraint firstItem="Ews-x0-X67" firstAttribute="top" secondItem="5bd-a5-e8m" secondAttribute="top" constant="30" id="nd2-d5-LfF"/>
+                            <constraint firstAttribute="bottom" secondItem="QR8-C8-E0Z" secondAttribute="bottom" constant="12" id="u0R-Pw-Vy8"/>
+                            <constraint firstItem="Ews-x0-X67" firstAttribute="leading" secondItem="5bd-a5-e8m" secondAttribute="leading" constant="31" id="uTj-2b-dJI"/>
+                            <constraint firstItem="kvN-SX-SI3" firstAttribute="top" secondItem="5bd-a5-e8m" secondAttribute="top" constant="160" id="wrT-PT-SsZ"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="imageView" destination="Ews-x0-X67" id="DbY-Yw-THO"/>
                         </connections>
@@ -63,9 +89,19 @@
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="167" height="151"/>
+            <connections>
+                <outlet property="friendLastName" destination="LGu-Uf-Z3F" id="YIF-9k-qNq"/>
+                <outlet property="friendName" destination="QR8-C8-E0Z" id="H9x-sV-p69"/>
+                <outlet property="friendPic" destination="Ews-x0-X67" id="6US-3k-9te"/>
+            </connections>
             <point key="canvasLocation" x="-100.00000000000001" y="46.205357142857139"/>
         </collectionViewCell>
     </objects>
+    <designables>
+        <designable name="kvN-SX-SI3">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

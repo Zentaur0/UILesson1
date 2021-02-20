@@ -7,20 +7,21 @@
 
 import UIKit
 
-class InformarionFriendCollectionViewController: UICollectionViewController {
+class InformarionFriendCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var selectedIP = Set<IndexPath>()
     var data: User!
-    var like: LikeView!
     
-    var friendsList = [String]()
+    let likeButton = HeartButton()
+    var isNeededToLike = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView!.register(UINib(nibName: "OneFriendCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "OneFriendCell")
-        self.title = data.name
-//        OneFriendCollectionViewCell().friendName.text = data.name
+        self.title = "id: \(data.id)"
+        self.view.addSubview(self.likeButton)
     }
+    
 
     // MARK: - Navigation
 
@@ -47,22 +48,25 @@ class InformarionFriendCollectionViewController: UICollectionViewController {
         return 1
     }
 
-    //MARK: not working
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OneFriendCell", for: indexPath) as! OneFriendCollectionViewCell
+        
+        cell.friendPic.image = UIImage(named: data.avatarName)
+        cell.friendName.text = data.name
+        cell.friendLastName.text = data.lastName
         
         return cell
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        
-//        self.view.addSubview(self.like)
-        
+
     }
     // MARK: UICollectionViewDelegate
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+    }
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {

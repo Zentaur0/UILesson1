@@ -11,7 +11,7 @@ class GroupTableViewCell: UITableViewCell {
     
     @IBOutlet weak var groupName: UILabel!
     
-    @IBOutlet weak var groupPic: UIImageView!
+    @IBOutlet weak var groupPic: AvatarView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,7 +20,6 @@ class GroupTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 }

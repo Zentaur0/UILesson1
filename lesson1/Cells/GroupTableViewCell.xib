@@ -5,45 +5,77 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" id="9XM-ON-ewu" customClass="GroupTableViewCell" customModule="lesson1" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" rowHeight="70" id="9XM-ON-ewu" customClass="GroupTableViewCell" customModule="lesson1" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9XM-ON-ewu" id="mSV-SL-nH8">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="11b-Pw-hmU">
-                        <rect key="frame" x="15" y="5" width="34" height="34"/>
-                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r43-GO-vkv" customClass="AvatarView" customModule="lesson1" customModuleProvider="target">
+                        <rect key="frame" x="16" y="10" width="50" height="50"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cdm-VT-R6X">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Cdm-VT-R6X" secondAttribute="trailing" id="4Bg-kp-Pqg"/>
+                            <constraint firstItem="Cdm-VT-R6X" firstAttribute="leading" secondItem="r43-GO-vkv" secondAttribute="leading" id="N4l-me-dcN"/>
+                            <constraint firstItem="Cdm-VT-R6X" firstAttribute="top" secondItem="r43-GO-vkv" secondAttribute="top" id="Q5Q-gz-kFx"/>
+                            <constraint firstItem="Cdm-VT-R6X" firstAttribute="width" secondItem="r43-GO-vkv" secondAttribute="width" id="Yr8-PW-PB8"/>
+                            <constraint firstAttribute="bottom" secondItem="Cdm-VT-R6X" secondAttribute="bottom" id="ce7-54-1xt"/>
+                            <constraint firstAttribute="width" constant="50" id="hBR-Nv-Fn3"/>
+                            <constraint firstAttribute="height" constant="50" id="q6J-ZV-BYv"/>
+                            <constraint firstItem="Cdm-VT-R6X" firstAttribute="height" secondItem="r43-GO-vkv" secondAttribute="height" id="squ-up-YMe"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="23"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                <size key="value" width="3" height="3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="imageView" destination="Cdm-VT-R6X" id="5wD-1s-lVj"/>
+                        </connections>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ehn-b4-KxU">
-                        <rect key="frame" x="60" y="10" width="245" height="24"/>
+                        <rect key="frame" x="74" y="25" width="196" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Ehn-b4-KxU" firstAttribute="leading" secondItem="mSV-SL-nH8" secondAttribute="leading" constant="60" id="CoP-qL-xDc"/>
-                    <constraint firstItem="Ehn-b4-KxU" firstAttribute="leading" secondItem="11b-Pw-hmU" secondAttribute="trailing" constant="11" id="KYH-Aq-QEy"/>
-                    <constraint firstAttribute="bottom" secondItem="Ehn-b4-KxU" secondAttribute="bottom" constant="10" id="NPO-sH-P6e"/>
-                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Ehn-b4-KxU" secondAttribute="trailing" constant="15" id="TkF-eL-AdZ"/>
-                    <constraint firstItem="Ehn-b4-KxU" firstAttribute="top" secondItem="mSV-SL-nH8" secondAttribute="top" constant="10" id="URU-at-heP"/>
-                    <constraint firstItem="11b-Pw-hmU" firstAttribute="leading" secondItem="mSV-SL-nH8" secondAttribute="leading" constant="15" id="Vwl-qO-sQi"/>
-                    <constraint firstItem="11b-Pw-hmU" firstAttribute="top" secondItem="mSV-SL-nH8" secondAttribute="top" constant="5" id="h7I-Cu-tBA"/>
-                    <constraint firstAttribute="bottom" secondItem="11b-Pw-hmU" secondAttribute="bottom" constant="5" id="rsd-t9-gxw"/>
+                    <constraint firstItem="r43-GO-vkv" firstAttribute="top" secondItem="mSV-SL-nH8" secondAttribute="top" constant="10" id="3Xt-cw-MLt"/>
+                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Ehn-b4-KxU" secondAttribute="trailing" constant="50" id="E5b-6E-Q9S"/>
+                    <constraint firstAttribute="bottom" secondItem="Ehn-b4-KxU" secondAttribute="bottom" constant="24.5" id="UgJ-WZ-qR7"/>
+                    <constraint firstAttribute="bottom" secondItem="r43-GO-vkv" secondAttribute="bottom" constant="10" id="YQ5-nb-qyx"/>
+                    <constraint firstItem="Ehn-b4-KxU" firstAttribute="top" secondItem="mSV-SL-nH8" secondAttribute="top" constant="25" id="cbc-qr-ObG"/>
+                    <constraint firstItem="r43-GO-vkv" firstAttribute="leading" secondItem="mSV-SL-nH8" secondAttribute="leading" constant="16" id="dzG-86-FLj"/>
+                    <constraint firstItem="Ehn-b4-KxU" firstAttribute="leading" secondItem="mSV-SL-nH8" secondAttribute="leading" constant="74" id="lMX-aB-z3P"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="V6n-1e-nKr"/>
             <connections>
                 <outlet property="groupName" destination="Ehn-b4-KxU" id="aCD-CB-EFN"/>
-                <outlet property="groupPic" destination="11b-Pw-hmU" id="gVX-uy-Sqw"/>
+                <outlet property="groupPic" destination="r43-GO-vkv" id="9oY-T6-dvH"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
+            <point key="canvasLocation" x="137.68115942028987" y="102.45535714285714"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

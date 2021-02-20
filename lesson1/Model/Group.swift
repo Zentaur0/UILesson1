@@ -12,4 +12,8 @@ struct Group {
     let nickname: String
     var bio: String
     let areaOfInterests: String
+    var pic: String
+}
+
+extension Group: Equatable {
 }

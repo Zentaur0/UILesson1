@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vt1-X1-aVc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="llv-ca-vyR">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -128,17 +128,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="16e-ZH-m4I">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="71u-2L-Tl7" id="Cp3-wx-gBe"/>
-                            </connections>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myFriendsCell" id="cHF-1G-bGu" customClass="FriendTableViewCell" customModule="lesson1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="320" height="43.5"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cHF-1G-bGu" id="HIW-2T-VCa">
                                     <rect key="frame" x="0.0" y="0.0" width="293" height="43.5"/>
@@ -167,7 +159,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6LI-0k-lJN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="VW7-lb-ueq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2100" y="552"/>
+            <point key="canvasLocation" x="1984" y="409"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="eux-dO-oi0">
@@ -183,6 +175,7 @@
                     <connections>
                         <segue destination="2b7-7W-5tb" kind="relationship" relationship="viewControllers" id="MH3-Fw-flC"/>
                         <segue destination="bHz-sY-Cz2" kind="relationship" relationship="viewControllers" id="a0G-AK-sCS"/>
+                        <segue destination="faF-Jz-CZx" kind="relationship" relationship="viewControllers" id="xjD-Hk-m6E"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHa-Kw-b7d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -223,7 +216,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ygs-WC-dIP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3022.5" y="551.4084507042254"/>
+            <point key="canvasLocation" x="2784" y="409"/>
         </scene>
         <!--Group Table View Controller-->
         <scene sceneID="31J-zL-jrJ">
@@ -233,17 +226,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="b9d-uu-P1N">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="tCn-gI-riJ" id="zHs-xL-zeA"/>
-                            </connections>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myGroupCell" id="GLG-T9-w9x" customClass="GroupTableViewCell" customModule="lesson1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="320" height="43.5"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GLG-T9-w9x" id="EtB-vz-TrX">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -272,7 +257,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXJ-Fh-YPq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="qZE-xw-TBD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2100" y="1631"/>
+            <point key="canvasLocation" x="1984" y="1130"/>
         </scene>
         <!--All Groups Table View Controller-->
         <scene sceneID="MYp-NO-jIT">
@@ -310,7 +295,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VyP-Cf-BKi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="mE7-Tu-e7p" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3023" y="1631"/>
+            <point key="canvasLocation" x="2783" y="1129"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TZw-8I-8Yd">
@@ -349,7 +334,42 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ao-56-DDD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1162" y="553"/>
+            <point key="canvasLocation" x="1161" y="409"/>
+        </scene>
+        <!--новости-->
+        <scene sceneID="B5g-Jn-w6N">
+            <objects>
+                <collectionViewController id="faF-Jz-CZx" customClass="NewsCollectionViewController" customModule="lesson1" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Ev2-DG-vcy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="09f-tB-nM0">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="newsCollectionCell" id="XtM-6i-GHn" customClass="NewsCollectionViewCell" customModule="lesson1" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="BS7-e5-AhL">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="faF-Jz-CZx" id="a5D-Uz-Z5c"/>
+                            <outlet property="delegate" destination="faF-Jz-CZx" id="DQd-tk-def"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="новости" image="pencil.tip" catalog="system" id="Zmp-sz-Sjn"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P2b-9J-Xbv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1161" y="1883"/>
         </scene>
         <!--интересы-->
         <scene sceneID="cZn-SB-GoJ">
@@ -368,7 +388,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZL-vM-rnG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1163" y="1631"/>
+            <point key="canvasLocation" x="1161" y="1130"/>
         </scene>
     </scenes>
     <color key="tintColor" systemColor="secondaryLabelColor"/>
@@ -376,6 +396,7 @@
         <image name="arrowshape.turn.up.left.circle.fill" catalog="system" width="128" height="121"/>
         <image name="globe" catalog="system" width="128" height="121"/>
         <image name="hand.thumbsup" catalog="system" width="128" height="128"/>
+        <image name="pencil.tip" catalog="system" width="99" height="128"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

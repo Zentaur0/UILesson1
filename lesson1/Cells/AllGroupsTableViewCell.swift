@@ -11,7 +11,7 @@ class AllGroupsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var allGroupName: UILabel!
     
-    @IBOutlet weak var allGroupPic: UIImageView!
+    @IBOutlet weak var allGroupPic: AvatarView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

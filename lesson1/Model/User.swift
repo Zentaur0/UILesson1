@@ -10,6 +10,10 @@ import Foundation
 struct User {
     let id: Int
     let name: String
+    let lastName: String
     var age: Int
     var avatarName: String
+}
+
+extension User: Equatable {
 }

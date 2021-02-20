@@ -14,12 +14,20 @@ class AvatarView: UIView {
         didSet {
             self.imageView.layer.cornerRadius = self.cornerRadius
             self.imageView.clipsToBounds = true
+            self.imageView.layer.borderColor = self.borderColor.cgColor
         }
     }
 
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
             self.layer.cornerRadius = cornerRadius
+        }
+    }
+    
+    @IBInspectable var borderColor: UIColor = .black {
+        didSet {
+            self.layer.borderColor = borderColor.cgColor
+            self.layer.borderWidth = 2
         }
     }
 

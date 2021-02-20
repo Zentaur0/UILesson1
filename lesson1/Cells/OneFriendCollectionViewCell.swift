@@ -9,7 +9,11 @@ import UIKit
 
 class OneFriendCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var friendPic: UIImageView!
+    
     @IBOutlet weak var friendName: UILabel!
+    
+    @IBOutlet weak var friendLastName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

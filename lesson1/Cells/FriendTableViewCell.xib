@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="friendCell" rowHeight="50" id="KGk-i7-Jjw" customClass="FriendTableViewCell" customModule="lesson1" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="friendCell" id="KGk-i7-Jjw" customClass="FriendTableViewCell" customModule="lesson1" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -47,25 +47,43 @@
                             <outlet property="imageView" destination="8qS-dI-dfl" id="JF5-ZI-kpT"/>
                         </connections>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Surname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gr-a5-JU2">
-                        <rect key="frame" x="68" y="25" width="195" height="20"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gr-a5-JU2">
+                        <rect key="frame" x="68" y="17" width="45" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <color key="highlightedColor" systemColor="labelColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dQ-mA-8QH">
+                        <rect key="frame" x="68" y="45" width="31" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LastName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpE-vn-KJL">
+                        <rect key="frame" x="118" y="17" width="77.5" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="6gr-a5-JU2" secondAttribute="bottom" constant="25" id="7ly-dL-I2N"/>
+                    <constraint firstAttribute="bottom" secondItem="6gr-a5-JU2" secondAttribute="bottom" constant="33" id="7ly-dL-I2N"/>
+                    <constraint firstItem="8dQ-mA-8QH" firstAttribute="top" secondItem="6gr-a5-JU2" secondAttribute="bottom" constant="8" symbolic="YES" id="8uU-yT-u0r"/>
                     <constraint firstAttribute="bottom" secondItem="9Xb-dG-W7R" secondAttribute="bottom" constant="10" id="FCq-cy-ktL"/>
                     <constraint firstItem="9Xb-dG-W7R" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Ff5-pi-DAv"/>
-                    <constraint firstAttribute="trailing" secondItem="6gr-a5-JU2" secondAttribute="trailing" constant="30" id="LWw-gh-JNN"/>
-                    <constraint firstItem="6gr-a5-JU2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="azw-5b-8jv"/>
+                    <constraint firstItem="dpE-vn-KJL" firstAttribute="leading" secondItem="6gr-a5-JU2" secondAttribute="trailing" constant="5" id="GY2-bW-OLx"/>
+                    <constraint firstAttribute="bottom" secondItem="dpE-vn-KJL" secondAttribute="bottom" constant="33" id="L1j-6u-3UJ"/>
+                    <constraint firstItem="dpE-vn-KJL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="MI2-bb-WAJ"/>
+                    <constraint firstItem="8dQ-mA-8QH" firstAttribute="leading" secondItem="8qS-dI-dfl" secondAttribute="trailing" constant="8" symbolic="YES" id="Qqk-9Z-zT2"/>
+                    <constraint firstItem="6gr-a5-JU2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="azw-5b-8jv"/>
                     <constraint firstItem="6gr-a5-JU2" firstAttribute="leading" secondItem="9Xb-dG-W7R" secondAttribute="trailing" constant="8" symbolic="YES" id="d30-FN-dfe"/>
                     <constraint firstItem="9Xb-dG-W7R" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="eRY-pZ-AaQ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="friendAge" destination="8dQ-mA-8QH" id="ZA5-rn-76q"/>
+                <outlet property="friendLastName" destination="dpE-vn-KJL" id="h71-pa-ndw"/>
                 <outlet property="friendName" destination="6gr-a5-JU2" id="3Na-5y-vWn"/>
                 <outlet property="friendPic" destination="9Xb-dG-W7R" id="DUO-nd-Udp"/>
             </connections>
@@ -73,6 +91,12 @@
         </tableViewCell>
     </objects>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
