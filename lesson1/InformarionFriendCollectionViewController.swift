@@ -12,17 +12,15 @@ class InformarionFriendCollectionViewController: UICollectionViewController, UIC
     var selectedIP = Set<IndexPath>()
     var data: User!
     
-    let likeButton = HeartButton()
-    var isNeededToLike = true
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView!.register(UINib(nibName: "OneFriendCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "OneFriendCell")
         self.title = "id: \(data.id)"
-        self.view.addSubview(self.likeButton)
     }
-    
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

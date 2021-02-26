@@ -25,6 +25,8 @@ class FriendsTableViewController: UITableViewController {
         
         self.tableView.register(UINib(nibName: "FriendTableViewCell", bundle: nil), forCellReuseIdentifier: "friendCell")
         self.tableView.register(UINib(nibName: "HeaderTableViewCell", bundle: nil), forHeaderFooterViewReuseIdentifier: "headerTableViewCell")
+        
+//        self.navigationController?.delegate = navigationDelegate
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -87,6 +89,7 @@ class FriendsTableViewController: UITableViewController {
             view.symbol.text = "a"
             return view
         }
+//        if section ==
         return nil
     }
     /*

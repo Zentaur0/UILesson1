@@ -15,10 +15,13 @@ class OneFriendCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var friendLastName: UILabel!
     
+    @IBOutlet weak var likeOutlet: HeartButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.backgroundColor = .gray
+        
     }
+    
 
 }

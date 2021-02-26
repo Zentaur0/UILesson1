@@ -44,15 +44,6 @@
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES"/>
                                 </accessibility>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
-                                        <color key="value" systemColor="labelColor"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -93,19 +84,12 @@
                 <outlet property="friendLastName" destination="LGu-Uf-Z3F" id="YIF-9k-qNq"/>
                 <outlet property="friendName" destination="QR8-C8-E0Z" id="H9x-sV-p69"/>
                 <outlet property="friendPic" destination="Ews-x0-X67" id="6US-3k-9te"/>
+                <outlet property="likeOutlet" destination="kvN-SX-SI3" id="NcV-Jy-DxA"/>
             </connections>
             <point key="canvasLocation" x="-100.00000000000001" y="46.205357142857139"/>
         </collectionViewCell>
     </objects>
-    <designables>
-        <designable name="kvN-SX-SI3">
-            <size key="intrinsicContentSize" width="30" height="34"/>
-        </designable>
-    </designables>
     <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

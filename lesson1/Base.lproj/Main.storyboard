@@ -32,8 +32,13 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" textContentType="username"/>
                                     </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="orY-x5-OEg">
+                                        <rect key="frame" x="48" y="296" width="224" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
                                     <button contentMode="bottom" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yk5-wM-9RS">
-                                        <rect key="frame" x="127.5" y="392" width="65" height="45"/>
+                                        <rect key="frame" x="127.5" y="398" width="65" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Login">
@@ -42,18 +47,11 @@
                                         </state>
                                         <connections>
                                             <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dyH-D7-adk"/>
-                                            <segue destination="Vt1-X1-aVc" kind="show" id="Nlv-Bh-liA"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="orY-x5-OEg">
-                                        <rect key="frame" x="48" y="296" width="224" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
-                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="orY-x5-OEg" firstAttribute="height" secondItem="6RW-AO-SvY" secondAttribute="height" id="3d1-eO-1zU"/>
-                                    <constraint firstAttribute="trailing" secondItem="yk5-wM-9RS" secondAttribute="trailing" constant="127.5" id="407-2Q-jRZ"/>
                                     <constraint firstItem="orY-x5-OEg" firstAttribute="leading" secondItem="xBb-CF-WnS" secondAttribute="leading" constant="48" id="7NK-Xv-ohO"/>
                                     <constraint firstItem="6RW-AO-SvY" firstAttribute="leading" secondItem="xBb-CF-WnS" secondAttribute="leading" constant="48" id="ArE-ng-hML"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="orY-x5-OEg" secondAttribute="trailing" constant="48" id="GSg-H5-J6c"/>
@@ -62,15 +60,16 @@
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="7Pd-QM-cqM" secondAttribute="trailing" constant="84" id="Ms9-XX-1wB"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="6RW-AO-SvY" secondAttribute="trailing" constant="48" id="Rad-A5-2B3"/>
                                     <constraint firstItem="6RW-AO-SvY" firstAttribute="centerX" secondItem="xBb-CF-WnS" secondAttribute="centerX" id="Rpz-sW-3Hm"/>
-                                    <constraint firstAttribute="bottom" secondItem="yk5-wM-9RS" secondAttribute="bottom" constant="131" id="VdD-XR-Mbh"/>
-                                    <constraint firstItem="yk5-wM-9RS" firstAttribute="top" secondItem="orY-x5-OEg" secondAttribute="bottom" constant="62" id="Vhz-fY-aGr"/>
+                                    <constraint firstAttribute="bottom" secondItem="yk5-wM-9RS" secondAttribute="bottom" constant="126" id="VdD-XR-Mbh"/>
+                                    <constraint firstItem="yk5-wM-9RS" firstAttribute="top" secondItem="orY-x5-OEg" secondAttribute="bottom" constant="68" id="Vhz-fY-aGr"/>
                                     <constraint firstItem="7Pd-QM-cqM" firstAttribute="leading" secondItem="xBb-CF-WnS" secondAttribute="leading" constant="84" id="ZcS-Nh-ZIP"/>
                                     <constraint firstItem="orY-x5-OEg" firstAttribute="centerX" secondItem="xBb-CF-WnS" secondAttribute="centerX" id="aKi-pq-xnZ"/>
+                                    <constraint firstItem="yk5-wM-9RS" firstAttribute="leading" secondItem="xBb-CF-WnS" secondAttribute="leading" constant="127.5" id="erJ-NB-daP"/>
                                     <constraint firstItem="7Pd-QM-cqM" firstAttribute="centerX" secondItem="xBb-CF-WnS" secondAttribute="centerX" id="fkb-BC-iff"/>
+                                    <constraint firstAttribute="trailing" secondItem="yk5-wM-9RS" secondAttribute="trailing" constant="40" id="hEO-kh-Q63"/>
                                     <constraint firstItem="6RW-AO-SvY" firstAttribute="height" secondItem="7Pd-QM-cqM" secondAttribute="height" multiplier="0.944444" id="mei-a0-ttA"/>
                                     <constraint firstItem="orY-x5-OEg" firstAttribute="top" secondItem="6RW-AO-SvY" secondAttribute="bottom" constant="8" symbolic="YES" id="tMW-wB-GXV"/>
                                     <constraint firstItem="7Pd-QM-cqM" firstAttribute="height" secondItem="xBb-CF-WnS" secondAttribute="height" multiplier="0.0633803" id="xNo-fw-F05"/>
-                                    <constraint firstItem="yk5-wM-9RS" firstAttribute="height" secondItem="orY-x5-OEg" secondAttribute="height" multiplier="1.32353" id="ycK-Ac-BHL"/>
                                     <constraint firstItem="yk5-wM-9RS" firstAttribute="centerX" secondItem="xBb-CF-WnS" secondAttribute="centerX" id="zMg-ZK-9uc"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="pJj-c6-CJt"/>
@@ -110,6 +109,7 @@
                     <navigationItem key="navigationItem" id="Zqj-mo-vhj"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="logInButton" destination="yk5-wM-9RS" id="CVX-ay-SO3"/>
                         <outlet property="loginInput" destination="6RW-AO-SvY" id="dVO-1b-wqA"/>
                         <outlet property="passwordInput" destination="orY-x5-OEg" id="5Mq-LF-Xae"/>
                         <outlet property="scrollView" destination="xBb-CF-WnS" id="Yfh-pe-LVW"/>
@@ -164,7 +164,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="eux-dO-oi0">
             <objects>
-                <tabBarController id="Vt1-X1-aVc" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="HeadViewController" id="Vt1-X1-aVc" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="z6H-mI-DfP"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="M7Q-pj-lNr">
@@ -198,7 +198,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="friendFullPage" id="NlR-2J-TaI" customClass="OneFriendCollectionViewCell" customModule="lesson1" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="friendFullPage" id="NlR-2J-TaI" customClass="OneFriendCollectionViewCell" customModule="lesson1" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="121" height="124"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2Qm-hM-hGb">

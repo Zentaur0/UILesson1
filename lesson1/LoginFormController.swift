@@ -9,23 +9,42 @@ import UIKit
 
 class LoginFormController: UIViewController {
     
+    // transition delegate для сохранения ссылки для перехода
+//    lazy var transitionDelegate = ScreenTransitionDelegate()
+    let navigationDelegate = NavigationTransitionDelegate()
+    
     @IBOutlet weak var scrollView: UIScrollView!
-    
     @IBOutlet weak var loginInput: UITextField!
-    
     @IBOutlet weak var passwordInput: UITextField!
+    @IBOutlet weak var logInButton: UIButton!
     
     @IBAction func loginButtonPressed(_ sender: Any) {
+        
         // Получаем текст логина
         let login = loginInput.text!
         // Получаем текст-пароль
         let password = passwordInput.text!
                 
         // Проверяем, верны ли они
-        if login == "admin" && password == "123456" {
+        if login == "admin" && password == "1234" {
             print("успешная авторизация")
+            
+            // создаем viewController на который совершается переход
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "HeadViewController")
+            
+            // создаем переход
+            
+//            vc.modalPresentationStyle = .custom
+//            vc.transitioningDelegate = transitionDelegate
+            
+            // показываем экран
+            self.navigationController?.pushViewController(vc, animated: true)
+//            self.present(vc, animated: true, completion: nil)
+            
         } else {
             print("неуспешная авторизация")
+            showLoginError()
         }
     }
     
@@ -33,19 +52,19 @@ class LoginFormController: UIViewController {
         
     }
     
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        let checkResult = checkUserData()
-        
-        if !checkResult {
-            showLoginError()
-        }
-        return checkResult
-    }
+//    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+//        let checkResult = checkUserData()
+//
+//        if !checkResult {
+//            showLoginError()
+//        }
+//        return checkResult
+//    }
     
     func checkUserData() -> Bool {
         guard let login = loginInput.text, let password = passwordInput.text else { return false }
         
-        if login == "admin" && password == "123456" {
+        if login == "admin" && password == "1234" {
             return true
         } else {
             return false
@@ -78,6 +97,13 @@ class LoginFormController: UIViewController {
         let contentInsets = UIEdgeInsets.zero
         scrollView?.contentInset = contentInsets
         }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.logInButton.layer.backgroundColor = UIColor.gray.cgColor
+        self.logInButton.layer.cornerRadius = 16
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -105,5 +131,6 @@ class LoginFormController: UIViewController {
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         // Присваиваем его UIScrollVIew
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
+        self.navigationController?.delegate = navigationDelegate
         }
 }
