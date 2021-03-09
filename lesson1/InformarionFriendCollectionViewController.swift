@@ -16,6 +16,8 @@ class InformarionFriendCollectionViewController: UICollectionViewController, UIC
         super.viewDidLoad()
         self.collectionView!.register(UINib(nibName: "OneFriendCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "OneFriendCell")
         self.title = "id: \(data.id)"
+        
+        self.collectionView.layer.backgroundColor = CGColor(gray: .infinity, alpha: 0.95)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -94,4 +96,17 @@ class InformarionFriendCollectionViewController: UICollectionViewController, UIC
     }
     */
 
+    // MARK: UICollectionViewDelegateFlowLayout
+    // Cells idents in section
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        let view = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+        return view
+    }
+    
+    // Cells vertical space
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        let view = CGFloat(25)
+        return view
+    }
 }

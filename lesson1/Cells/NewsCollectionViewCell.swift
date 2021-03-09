@@ -15,7 +15,7 @@ class NewsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var time: UILabel!
     
-    @IBOutlet weak var thePic: UIImageView!
+    @IBOutlet weak var thePicCollection: UIImageView!
     
     @IBOutlet weak var likeButton: HeartButton!
     

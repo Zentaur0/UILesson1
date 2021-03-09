@@ -7,7 +7,10 @@
 
 import UIKit
 
-class AllGroupsTableViewController: UITableViewController {
+class AllGroupsTableViewController: UITableViewController, UISearchBarDelegate {
+    
+    var filteredGroups: [Group] = []
+    @IBOutlet weak var searchBar: UISearchBar!
     
     let groups = [
         Group(id: 1, nickname: "Cars", bio: "everythin about cars", areaOfInterests: "#cars, #speed", pic: "carsAvatar"),
@@ -26,6 +29,10 @@ class AllGroupsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        // search bar config
+        self.searchBar.delegate = self
+        self.filteredGroups = self.groups
     }
 
     // MARK: - Table view data source
@@ -37,15 +44,14 @@ class AllGroupsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return groups.count
+        return filteredGroups.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "allGroupCell", for: indexPath) as! AllGroupsTableViewCell
         
-//        let group = groups[indexPath.row]
-        cell.allGroupName.text = self.groups[indexPath.row].nickname
-        cell.allGroupPic.imageView.image = UIImage(systemName: self.groups[indexPath.row].pic)
+        cell.allGroupName.text = self.filteredGroups[indexPath.row].nickname
+        cell.allGroupPic.imageView.image = UIImage(systemName: self.filteredGroups[indexPath.row].pic)
 
         return cell
     }
@@ -55,49 +61,18 @@ class AllGroupsTableViewController: UITableViewController {
         performSegue(withIdentifier: "addGroup", sender: nil)
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredGroups = []
+        
+        if searchText == "" {
+            filteredGroups = groups
+        } else {
+            for symbol in groups {
+                if symbol.nickname.lowercased().contains(searchText.lowercased()) {
+                    filteredGroups.append(symbol)
+                }
+            }
+        }
+        self.tableView.reloadData()
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

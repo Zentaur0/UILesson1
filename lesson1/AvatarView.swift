@@ -7,8 +7,7 @@
 
 import UIKit
 
-@IBDesignable
-class AvatarView: UIView {
+@IBDesignable class AvatarView: UIView {
 
     @IBOutlet var imageView: UIImageView! {
         didSet {
@@ -18,7 +17,7 @@ class AvatarView: UIView {
         }
     }
 
-    @IBInspectable var cornerRadius: CGFloat = 0 {
+   @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
             self.layer.cornerRadius = cornerRadius
         }

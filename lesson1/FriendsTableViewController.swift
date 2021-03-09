@@ -7,10 +7,13 @@
 
 import UIKit
 
-class FriendsTableViewController: UITableViewController {
+class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
     
     var data: User!
     var selectedIndexPaths = Set<IndexPath>()
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    var filteredCells: [User] = []
     
     private var friendsList = [
         User(id: 1, name: "Anastasia", lastName: "Gulert", age: 23, avatarName: "GulertAnastasia_Avatar"),
@@ -26,26 +29,27 @@ class FriendsTableViewController: UITableViewController {
         self.tableView.register(UINib(nibName: "FriendTableViewCell", bundle: nil), forCellReuseIdentifier: "friendCell")
         self.tableView.register(UINib(nibName: "HeaderTableViewCell", bundle: nil), forHeaderFooterViewReuseIdentifier: "headerTableViewCell")
         
-//        self.navigationController?.delegate = navigationDelegate
+        // searchBar config
+        self.searchBar.delegate = self
+        self.filteredCells = self.friendsList
+        
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return friendsList.count
+        return filteredCells.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! FriendTableViewCell
         
-        cell.friendName.text = self.friendsList[indexPath.row].name
-        cell.friendLastName.text = self.friendsList[indexPath.row].lastName
-        cell.friendPic.imageView.image = UIImage(named: self.friendsList[indexPath.row].avatarName)
-        cell.friendAge.text = "\(self.friendsList[indexPath.row].age) years"
+        cell.friendName.text = self.filteredCells[indexPath.row].name
+        cell.friendLastName.text = self.filteredCells[indexPath.row].lastName
+        cell.friendPic.imageView.image = UIImage(named: self.filteredCells[indexPath.row].avatarName)
+        cell.friendAge.text = "\(self.filteredCells[indexPath.row].age) years"
         
         return cell
     }
@@ -53,8 +57,6 @@ class FriendsTableViewController: UITableViewController {
     var showingIndex: IndexPath?
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
         self.showingIndex = indexPath
         performSegue(withIdentifier: "goToFriendPage", sender: nil)
     }
@@ -64,7 +66,7 @@ class FriendsTableViewController: UITableViewController {
         
         guard let indexPath = self.showingIndex, segue.identifier == "goToFriendPage" else { return }
         let vc = segue.destination as! InformarionFriendCollectionViewController
-        vc.data = self.friendsList[indexPath.row]
+        vc.data = self.filteredCells[indexPath.row]
         
     }
     
@@ -74,7 +76,7 @@ class FriendsTableViewController: UITableViewController {
         if segue.identifier == "goToFriendPage" {
             guard let allFriendsPage = segue.source as? FriendsTableViewController else { return }
             if let indexPath = allFriendsPage.tableView.indexPathForSelectedRow {
-                let friend = allFriendsPage.friendsList[indexPath.row].name
+                let friend = allFriendsPage.filteredCells[indexPath.row].name
                 let cell = OneFriendCollectionViewCell()
                 if allFriendsPage.tableView.contains(friend as! UIFocusEnvironment) {
                     cell.friendPic.image = UIImage(named: allFriendsPage.data.avatarName)
@@ -84,57 +86,25 @@ class FriendsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0 {
-            let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "headerTableViewCell") as! HeaderTableViewCell
-            view.symbol.text = "a"
-            return view
+    
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "headerTableViewCell") as! HeaderTableViewCell
+        view.symbol.text = "A"
+        return view
+    }
+    
+    // SearchBar settings
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredCells = []
+        
+        if searchText == "" {
+            filteredCells = friendsList
+        } else {
+            for symbol in friendsList {
+                if symbol.name.lowercased().contains(searchText.lowercased()) || symbol.lastName.lowercased().contains(searchText.lowercased()) {
+                    filteredCells.append(symbol)
+                }
+            }
         }
-//        if section ==
-        return nil
+        self.tableView.reloadData()
     }
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
