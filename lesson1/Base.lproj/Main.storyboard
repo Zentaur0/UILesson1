@@ -28,17 +28,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6RW-AO-SvY">
-                                        <rect key="frame" x="48" y="254" width="224" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <rect key="frame" x="48" y="254" width="224" height="39.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" textContentType="username"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="orY-x5-OEg">
-                                        <rect key="frame" x="48" y="296" width="224" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <rect key="frame" x="48" y="301.5" width="224" height="38"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button contentMode="bottom" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yk5-wM-9RS">
-                                        <rect key="frame" x="127.5" y="398" width="65" height="45"/>
+                                        <rect key="frame" x="127.5" y="407.5" width="65" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Login">
@@ -51,7 +51,6 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="orY-x5-OEg" firstAttribute="height" secondItem="6RW-AO-SvY" secondAttribute="height" id="3d1-eO-1zU"/>
                                     <constraint firstItem="orY-x5-OEg" firstAttribute="leading" secondItem="xBb-CF-WnS" secondAttribute="leading" constant="48" id="7NK-Xv-ohO"/>
                                     <constraint firstItem="6RW-AO-SvY" firstAttribute="leading" secondItem="xBb-CF-WnS" secondAttribute="leading" constant="48" id="ArE-ng-hML"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="orY-x5-OEg" secondAttribute="trailing" constant="48" id="GSg-H5-J6c"/>
@@ -64,10 +63,9 @@
                                     <constraint firstItem="yk5-wM-9RS" firstAttribute="top" secondItem="orY-x5-OEg" secondAttribute="bottom" constant="68" id="Vhz-fY-aGr"/>
                                     <constraint firstItem="7Pd-QM-cqM" firstAttribute="leading" secondItem="xBb-CF-WnS" secondAttribute="leading" constant="84" id="ZcS-Nh-ZIP"/>
                                     <constraint firstItem="orY-x5-OEg" firstAttribute="centerX" secondItem="xBb-CF-WnS" secondAttribute="centerX" id="aKi-pq-xnZ"/>
-                                    <constraint firstItem="yk5-wM-9RS" firstAttribute="leading" secondItem="xBb-CF-WnS" secondAttribute="leading" constant="127.5" id="erJ-NB-daP"/>
+                                    <constraint firstItem="yk5-wM-9RS" firstAttribute="leading" relation="lessThanOrEqual" secondItem="xBb-CF-WnS" secondAttribute="leading" constant="127.5" id="erJ-NB-daP"/>
                                     <constraint firstItem="7Pd-QM-cqM" firstAttribute="centerX" secondItem="xBb-CF-WnS" secondAttribute="centerX" id="fkb-BC-iff"/>
                                     <constraint firstAttribute="trailing" secondItem="yk5-wM-9RS" secondAttribute="trailing" constant="40" id="hEO-kh-Q63"/>
-                                    <constraint firstItem="6RW-AO-SvY" firstAttribute="height" secondItem="7Pd-QM-cqM" secondAttribute="height" multiplier="0.944444" id="mei-a0-ttA"/>
                                     <constraint firstItem="orY-x5-OEg" firstAttribute="top" secondItem="6RW-AO-SvY" secondAttribute="bottom" constant="8" symbolic="YES" id="tMW-wB-GXV"/>
                                     <constraint firstItem="7Pd-QM-cqM" firstAttribute="height" secondItem="xBb-CF-WnS" secondAttribute="height" multiplier="0.0633803" id="xNo-fw-F05"/>
                                     <constraint firstItem="yk5-wM-9RS" firstAttribute="centerX" secondItem="xBb-CF-WnS" secondAttribute="centerX" id="zMg-ZK-9uc"/>
@@ -128,9 +126,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="e86-4g-JJE">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myFriendsCell" id="cHF-1G-bGu" customClass="FriendTableViewCell" customModule="lesson1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
+                                <rect key="frame" x="0.0" y="72" width="320" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cHF-1G-bGu" id="HIW-2T-VCa">
                                     <rect key="frame" x="0.0" y="0.0" width="293" height="43.5"/>
@@ -155,6 +158,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="searchBar" destination="e86-4g-JJE" id="PQV-qt-Flu"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6LI-0k-lJN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="VW7-lb-ueq" userLabel="Exit" sceneMemberID="exit"/>
@@ -226,9 +232,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="KCQ-Zf-U6k">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myGroupCell" id="GLG-T9-w9x" customClass="GroupTableViewCell" customModule="lesson1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
+                                <rect key="frame" x="0.0" y="72" width="320" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GLG-T9-w9x" id="EtB-vz-TrX">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -253,6 +264,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="KCQ-Zf-U6k" id="Q3m-7j-TQI"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXJ-Fh-YPq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="qZE-xw-TBD" userLabel="Exit" sceneMemberID="exit"/>
@@ -263,7 +277,7 @@
         <scene sceneID="MYp-NO-jIT">
             <objects>
                 <tableViewController id="LQY-Sh-1M2" customClass="AllGroupsTableViewController" customModule="lesson1" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hNS-HO-GHe">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hNS-HO-GHe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -273,7 +287,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="allGroupCell" id="4Yj-mH-Ldx" customClass="AllGroupsTableViewCell" customModule="lesson1" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="allGroupCell" id="4Yj-mH-Ldx" customClass="AllGroupsTableViewCell" customModule="lesson1" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="320" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Yj-mH-Ldx" id="gVR-pn-mzz">
@@ -291,6 +305,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="wGR-Xx-fqs"/>
+                    <connections>
+                        <outlet property="searchBar" destination="M2g-6G-xLu" id="6H6-Fj-WBB"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VyP-Cf-BKi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="mE7-Tu-e7p" userLabel="Exit" sceneMemberID="exit"/>
@@ -306,6 +323,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Ap-7Y-GXZ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="0Xf-AS-J8w"/>
                     </connections>

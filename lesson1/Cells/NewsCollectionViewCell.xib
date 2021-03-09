@@ -33,12 +33,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="683738288_preview_ea53db89021caa3c2a5519ec22316339_large" adjustsImageSizeForAccessibilityContentSizeCategory="YES" id="9PC-3N-5C5">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="news" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9PC-3N-5C5">
                                 <rect key="frame" x="0.0" y="57" width="400" height="256"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="9PC-3N-5C5" secondAttribute="height" multiplier="25:16" id="aG1-tm-wge"/>
+                                    <constraint firstAttribute="width" secondItem="9PC-3N-5C5" secondAttribute="height" multiplier="25:16" id="Yuz-zP-7h3"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ucS-KM-0fZ" customClass="AvatarView" customModule="lesson1" customModuleProvider="target">
@@ -172,22 +171,19 @@
             <size key="customSize" width="209" height="174"/>
             <connections>
                 <outlet property="avatar" destination="ucS-KM-0fZ" id="kvP-6z-g3I"/>
+                <outlet property="commentButton" destination="GDP-Yj-zWU" id="LVs-he-mFF"/>
                 <outlet property="likeButton" destination="lZy-lP-mnb" id="c3J-TK-hYR"/>
                 <outlet property="name" destination="70q-qq-hey" id="eGI-UG-gj0"/>
-                <outlet property="thePic" destination="9PC-3N-5C5" id="H2f-n5-zY9"/>
+                <outlet property="shareButton" destination="saS-qf-mRc" id="WIy-FQ-ZWc"/>
+                <outlet property="thePicCollection" destination="9PC-3N-5C5" id="NBs-eb-aeU"/>
                 <outlet property="time" destination="46k-DQ-jRc" id="WQU-i7-KBV"/>
             </connections>
             <point key="canvasLocation" x="204.34782608695653" y="127.90178571428571"/>
         </collectionViewCell>
     </objects>
-    <designables>
-        <designable name="lZy-lP-mnb">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-    </designables>
     <resources>
-        <image name="683738288_preview_ea53db89021caa3c2a5519ec22316339_large" width="3840" height="2160"/>
         <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
+        <image name="news" width="1920" height="1080"/>
         <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

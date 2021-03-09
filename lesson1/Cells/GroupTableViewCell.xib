@@ -18,23 +18,22 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r43-GO-vkv" customClass="AvatarView" customModule="lesson1" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lc8-w8-rhw" customClass="AvatarView" customModule="lesson1" customModuleProvider="target">
                         <rect key="frame" x="16" y="10" width="50" height="50"/>
                         <subviews>
-                            <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="40" placeholderIntrinsicHeight="40" translatesAutoresizingMaskIntoConstraints="NO" id="Cdm-VT-R6X">
+                            <imageView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4fg-8Y-Tnb">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Cdm-VT-R6X" secondAttribute="trailing" id="4Bg-kp-Pqg"/>
-                            <constraint firstItem="Cdm-VT-R6X" firstAttribute="leading" secondItem="r43-GO-vkv" secondAttribute="leading" id="N4l-me-dcN"/>
-                            <constraint firstItem="Cdm-VT-R6X" firstAttribute="top" secondItem="r43-GO-vkv" secondAttribute="top" id="Q5Q-gz-kFx"/>
-                            <constraint firstItem="Cdm-VT-R6X" firstAttribute="width" secondItem="r43-GO-vkv" secondAttribute="width" id="Yr8-PW-PB8"/>
-                            <constraint firstAttribute="bottom" secondItem="Cdm-VT-R6X" secondAttribute="bottom" id="ce7-54-1xt"/>
-                            <constraint firstAttribute="width" constant="50" id="hBR-Nv-Fn3"/>
-                            <constraint firstAttribute="height" constant="50" id="q6J-ZV-BYv"/>
-                            <constraint firstItem="Cdm-VT-R6X" firstAttribute="height" secondItem="r43-GO-vkv" secondAttribute="height" id="squ-up-YMe"/>
+                            <constraint firstAttribute="width" constant="50" id="Coh-In-q0b"/>
+                            <constraint firstItem="4fg-8Y-Tnb" firstAttribute="leading" secondItem="Lc8-w8-rhw" secondAttribute="trailing" constant="-50" id="JNH-z3-Cbi"/>
+                            <constraint firstItem="4fg-8Y-Tnb" firstAttribute="width" secondItem="Lc8-w8-rhw" secondAttribute="width" id="Ofd-Sb-IOh"/>
+                            <constraint firstAttribute="height" constant="50" id="P17-GX-8nD"/>
+                            <constraint firstItem="4fg-8Y-Tnb" firstAttribute="height" secondItem="Lc8-w8-rhw" secondAttribute="height" id="XNe-2s-prA"/>
+                            <constraint firstItem="4fg-8Y-Tnb" firstAttribute="centerY" secondItem="Lc8-w8-rhw" secondAttribute="centerY" id="d18-Lj-ZZO"/>
+                            <constraint firstItem="4fg-8Y-Tnb" firstAttribute="top" secondItem="Lc8-w8-rhw" secondAttribute="top" id="kL8-1o-mV8"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -45,7 +44,7 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                         <connections>
-                            <outlet property="imageView" destination="Cdm-VT-R6X" id="5wD-1s-lVj"/>
+                            <outlet property="imageView" destination="4fg-8Y-Tnb" id="0aE-2E-R0k"/>
                         </connections>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ehn-b4-KxU">
@@ -56,19 +55,18 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="r43-GO-vkv" firstAttribute="top" secondItem="mSV-SL-nH8" secondAttribute="top" constant="10" id="3Xt-cw-MLt"/>
+                    <constraint firstItem="Lc8-w8-rhw" firstAttribute="top" secondItem="mSV-SL-nH8" secondAttribute="top" constant="10" id="6bo-vK-EDv"/>
                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Ehn-b4-KxU" secondAttribute="trailing" constant="50" id="E5b-6E-Q9S"/>
                     <constraint firstAttribute="bottom" secondItem="Ehn-b4-KxU" secondAttribute="bottom" constant="24.5" id="UgJ-WZ-qR7"/>
-                    <constraint firstAttribute="bottom" secondItem="r43-GO-vkv" secondAttribute="bottom" constant="10" id="YQ5-nb-qyx"/>
+                    <constraint firstItem="Lc8-w8-rhw" firstAttribute="leading" secondItem="mSV-SL-nH8" secondAttribute="leading" constant="16" id="WAb-dw-NRW"/>
                     <constraint firstItem="Ehn-b4-KxU" firstAttribute="top" secondItem="mSV-SL-nH8" secondAttribute="top" constant="25" id="cbc-qr-ObG"/>
-                    <constraint firstItem="r43-GO-vkv" firstAttribute="leading" secondItem="mSV-SL-nH8" secondAttribute="leading" constant="16" id="dzG-86-FLj"/>
                     <constraint firstItem="Ehn-b4-KxU" firstAttribute="leading" secondItem="mSV-SL-nH8" secondAttribute="leading" constant="74" id="lMX-aB-z3P"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="V6n-1e-nKr"/>
             <connections>
                 <outlet property="groupName" destination="Ehn-b4-KxU" id="aCD-CB-EFN"/>
-                <outlet property="groupPic" destination="r43-GO-vkv" id="9oY-T6-dvH"/>
+                <outlet property="groupPic" destination="Lc8-w8-rhw" id="iPh-1r-bbg"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="102.45535714285714"/>
         </tableViewCell>
