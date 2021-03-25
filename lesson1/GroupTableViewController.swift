@@ -7,19 +7,20 @@
 
 import UIKit
 
-class GroupTableViewController: UITableViewController {
-
-    @IBOutlet var groupsPage: UITableView!
+class GroupTableViewController: UITableViewController, UISearchBarDelegate {
     
-    var groups = [String]()
+    var groups = [Group]()
+    @IBOutlet weak var searchBar: UISearchBar!
+    private var filteredGroups: [Group] = []
     
     @IBAction func addGroup(segue: UIStoryboardSegue) {
         if segue.identifier == "addGroup" {
             guard let allGroupsController = segue.source as? AllGroupsTableViewController else { return }
             if let indexPath = allGroupsController.tableView.indexPathForSelectedRow {
-                let group = allGroupsController.groups[indexPath.row]
+                let group = allGroupsController.filteredGroups[indexPath.row]
             
-                if !groups.contains(group) {
+                if !filteredGroups.contains(group) {
+                    filteredGroups.append(group)
                     groups.append(group)
                     tableView.reloadData()
                 }
@@ -30,12 +31,16 @@ class GroupTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        groupsPage.register(UINib(nibName: "GroupTableViewCell", bundle: nil), forCellReuseIdentifier: "groupCell")
+        self.tableView.register(UINib(nibName: "GroupTableViewCell", bundle: nil), forCellReuseIdentifier: "groupCell")
         // Uncomment the following line to preserve selection between presentations
 //         self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
 //         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        // searchBar config
+        self.searchBar.delegate = self
+        self.filteredGroups = self.groups
     }
 
     // MARK: - Table view data source
@@ -45,22 +50,21 @@ class GroupTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return groups.count
+        return filteredGroups.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! GroupTableViewCell
         
-        let group = groups[indexPath.row]
+        let group = filteredGroups[indexPath.row].nickname
         cell.groupName.text = group
-        cell.groupPic.image = UIImage(systemName: "globe")
+        cell.groupPic.imageView.image = UIImage(systemName: self.filteredGroups[indexPath.row].pic)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
     }
 
     /*
@@ -76,36 +80,25 @@ class GroupTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            groups.remove(at: indexPath.row)
+            filteredGroups.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
 
-    
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+   // SearchBar
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredGroups = []
+        
+        if searchText == "" {
+            filteredGroups = groups
+        } else {
+            for symbol in groups {
+                if symbol.nickname.lowercased().contains(searchText.lowercased()) {
+                    filteredGroups.append(symbol)
+                }
+            }
+        }
+        self.tableView.reloadData()
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -7,21 +7,26 @@
 
 import UIKit
 
-@IBDesignable
-class AvatarView: UIView {
+@IBDesignable class AvatarView: UIView {
 
     @IBOutlet var imageView: UIImageView! {
         didSet {
             self.imageView.layer.cornerRadius = self.cornerRadius
             self.imageView.clipsToBounds = true
+            self.imageView.layer.borderColor = self.borderColor.cgColor
         }
     }
 
-    @IBInspectable var cornerRadius: CGFloat = 0 {
+   @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
             self.layer.cornerRadius = cornerRadius
-//            self.imageView.layer.cornerRadius = cornerRadius
-//            self.imageView.layer.masksToBounds = true
+        }
+    }
+    
+    @IBInspectable var borderColor: UIColor = .black {
+        didSet {
+            self.layer.borderColor = borderColor.cgColor
+            self.layer.borderWidth = 2
         }
     }
 
