@@ -10,6 +10,40 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="K2k-OK-Dnm">
+            <objects>
+                <viewController id="uqz-IH-oWi" customClass="VKLoginViewController" customModule="lesson1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4pw-eO-Dbj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ke-uj-7PB">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UpA-1q-dfg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UpA-1q-dfg" firstAttribute="trailing" secondItem="5Ke-uj-7PB" secondAttribute="trailing" id="4cb-Ml-FIl"/>
+                            <constraint firstItem="5Ke-uj-7PB" firstAttribute="top" secondItem="UpA-1q-dfg" secondAttribute="top" id="HqH-r1-S2f"/>
+                            <constraint firstItem="UpA-1q-dfg" firstAttribute="bottom" secondItem="5Ke-uj-7PB" secondAttribute="bottom" id="WZg-Lg-Bj6"/>
+                            <constraint firstItem="5Ke-uj-7PB" firstAttribute="leading" secondItem="UpA-1q-dfg" secondAttribute="leading" id="v1x-Xu-A5G"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="5Ke-uj-7PB" id="cYb-kK-Jch"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bIZ-Ap-bOb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-603" y="416"/>
+        </scene>
         <!--Login Form Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -39,6 +73,7 @@
                                     </textField>
                                     <button contentMode="bottom" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yk5-wM-9RS">
                                         <rect key="frame" x="127.5" y="407.5" width="65" height="45"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Login">
@@ -49,14 +84,29 @@
                                             <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dyH-D7-adk"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmE-Zf-6WR">
+                                        <rect key="frame" x="111" y="462.5" width="98" height="45"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <color key="tintColor" systemColor="systemTealColor"/>
+                                        <state key="normal" title="VKLogin">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                            <color key="titleShadowColor" systemColor="systemTealColor"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="uqz-IH-oWi" kind="showDetail" id="bjG-DA-nek"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="orY-x5-OEg" firstAttribute="leading" secondItem="xBb-CF-WnS" secondAttribute="leading" constant="48" id="7NK-Xv-ohO"/>
                                     <constraint firstItem="6RW-AO-SvY" firstAttribute="leading" secondItem="xBb-CF-WnS" secondAttribute="leading" constant="48" id="ArE-ng-hML"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="orY-x5-OEg" secondAttribute="trailing" constant="48" id="GSg-H5-J6c"/>
                                     <constraint firstItem="6RW-AO-SvY" firstAttribute="top" secondItem="7Pd-QM-cqM" secondAttribute="bottom" constant="62" id="IgJ-yi-jGC"/>
+                                    <constraint firstItem="vmE-Zf-6WR" firstAttribute="leading" secondItem="xBb-CF-WnS" secondAttribute="leading" constant="111" id="JUs-rJ-2Gw"/>
                                     <constraint firstItem="7Pd-QM-cqM" firstAttribute="top" secondItem="xBb-CF-WnS" secondAttribute="top" constant="156" id="Loj-FC-TxA"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="7Pd-QM-cqM" secondAttribute="trailing" constant="84" id="Ms9-XX-1wB"/>
+                                    <constraint firstItem="vmE-Zf-6WR" firstAttribute="centerX" secondItem="xBb-CF-WnS" secondAttribute="centerX" id="Ohv-Ya-x6P"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="6RW-AO-SvY" secondAttribute="trailing" constant="48" id="Rad-A5-2B3"/>
                                     <constraint firstItem="6RW-AO-SvY" firstAttribute="centerX" secondItem="xBb-CF-WnS" secondAttribute="centerX" id="Rpz-sW-3Hm"/>
                                     <constraint firstAttribute="bottom" secondItem="yk5-wM-9RS" secondAttribute="bottom" constant="126" id="VdD-XR-Mbh"/>
@@ -66,6 +116,7 @@
                                     <constraint firstItem="yk5-wM-9RS" firstAttribute="leading" relation="lessThanOrEqual" secondItem="xBb-CF-WnS" secondAttribute="leading" constant="127.5" id="erJ-NB-daP"/>
                                     <constraint firstItem="7Pd-QM-cqM" firstAttribute="centerX" secondItem="xBb-CF-WnS" secondAttribute="centerX" id="fkb-BC-iff"/>
                                     <constraint firstAttribute="trailing" secondItem="yk5-wM-9RS" secondAttribute="trailing" constant="40" id="hEO-kh-Q63"/>
+                                    <constraint firstItem="vmE-Zf-6WR" firstAttribute="top" secondItem="yk5-wM-9RS" secondAttribute="bottom" constant="10" id="qUl-mz-1qA"/>
                                     <constraint firstItem="orY-x5-OEg" firstAttribute="top" secondItem="6RW-AO-SvY" secondAttribute="bottom" constant="8" symbolic="YES" id="tMW-wB-GXV"/>
                                     <constraint firstItem="7Pd-QM-cqM" firstAttribute="height" secondItem="xBb-CF-WnS" secondAttribute="height" multiplier="0.0633803" id="xNo-fw-F05"/>
                                     <constraint firstItem="yk5-wM-9RS" firstAttribute="centerX" secondItem="xBb-CF-WnS" secondAttribute="centerX" id="zMg-ZK-9uc"/>
@@ -418,6 +469,9 @@
         <image name="hand.thumbsup" catalog="system" width="128" height="128"/>
         <image name="pencil.tip" catalog="system" width="99" height="128"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -429,6 +483,12 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemFillColor">
             <color red="0.46274509803921571" green="0.46274509803921571" blue="0.50196078431372548" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
